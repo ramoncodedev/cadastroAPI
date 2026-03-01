@@ -5,6 +5,8 @@ import com.ramondev.CadastroAPI.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class ClienteService {
@@ -15,5 +17,8 @@ public class ClienteService {
         return clienteRepository.save(cliente);
     }
 
+    public List<Cliente> getFindCliente(){
+        return clienteRepository.findAll();
+    }
 
 }
