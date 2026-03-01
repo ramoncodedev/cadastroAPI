@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RequiredArgsConstructor
@@ -24,5 +25,10 @@ public class ClienteController {
     @GetMapping
     public List<Cliente> findList(){
         return service.getFindCliente();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Cliente> byfindId(@PathVariable Long id){
+        return service.byFindId(id);
     }
 }
